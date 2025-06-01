@@ -20,7 +20,7 @@
       "displayName" : "Curses++ shared",
       "inherits" : "ninja",
       "cacheVariables" : {
-        "CURSES_PLUS_PLUS_SHARED" : "ON"
+        "DLL_DIGGITY_SHARED" : "ON"
       }
     }
   ],

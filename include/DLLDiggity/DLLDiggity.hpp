@@ -1,5 +1,6 @@
 #ifndef DLL_DIGGITY_H
 #define DLL_DIGGITY_H
+#include <dlfcn.h>
 
 namespace DllDiggity
 {

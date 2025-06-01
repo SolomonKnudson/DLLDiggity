@@ -1,4 +1,4 @@
-#include <DllDiggity/DllDiggity.hpp>
+#include <DLLDiggity/DLLDiggity.hpp>
 
 int
 main()
