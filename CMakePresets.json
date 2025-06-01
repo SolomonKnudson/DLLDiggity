@@ -1,0 +1,131 @@
+{
+  "version" : 8,
+
+  "configurePresets" : [
+    {
+      "name" : "base",
+      "hidden" : true,
+      "binaryDir" : "${sourceDir}/build/"
+    },
+
+    {
+      "name" : "ninja",
+      "displayName" : "Ninja Multi-Config build",
+      "inherits" : "base",
+      "generator" : "Ninja Multi-Config"
+    },
+
+    {
+      "name" : "shared-debug",
+      "displayName" : "Curses++ shared",
+      "inherits" : "ninja",
+      "cacheVariables" : {
+        "CURSES_PLUS_PLUS_SHARED" : "ON"
+      }
+    }
+  ],
+
+  "buildPresets" : [
+    {
+      "name" : "debug",
+      "displayName" : "Debug build",
+
+      "configurePreset" : "ninja",
+      "configuration" : "Debug"
+    },
+
+    {
+      "name" : "release",
+      "displayName" : "Release build",
+
+      "configurePreset" : "ninja",
+      "configuration" : "Release"
+    },
+
+    {
+      "name" : "RelWithDebInfo",
+      "displayName" : "RelWithDebInfo build",
+
+      "configurePreset" : "ninja",
+      "configuration" : "RelWithDebInfo"
+    },
+
+    {
+      "name" : "shared-debug",
+      "displayName" : "Shared debug build",
+
+      "configurePreset" : "shared-debug",
+      "configuration" : "Debug"
+    }
+  ],
+
+  "workflowPresets" : [
+    {
+      "name" : "debug",
+      "displayName" : "Debug workflow",
+
+      "steps" : [
+        {
+          "type" : "configure",
+          "name" : "ninja"
+        },
+
+        {
+          "type" : "build",
+          "name" : "debug"
+        }
+      ]
+    },
+
+    {
+      "name" : "release",
+      "displayName" : "Release workflow",
+
+      "steps" : [
+        {
+          "type" : "configure",
+          "name" : "ninja"
+        },
+
+        {
+          "type" : "build",
+          "name" : "release"
+        }
+      ]
+    },
+
+    {
+      "name" : "RelWithDebInfo",
+      "displayName" : "RelWithDebInfo workflow",
+
+      "steps" : [
+        {
+          "type" : "configure",
+          "name" : "ninja"
+        },
+
+        {
+          "type" : "build",
+          "name" : "RelWithDebInfo"
+        }
+      ]
+    },
+
+    {
+      "name" : "shared-debug",
+      "displayName" : "shared-debug workflow",
+
+      "steps" : [
+        {
+          "type" : "configure",
+          "name" : "shared-debug"
+        },
+
+        {
+          "type" : "build",
+          "name" : "shared-debug"
+        }
+      ]
+    }
+  ]
+}
