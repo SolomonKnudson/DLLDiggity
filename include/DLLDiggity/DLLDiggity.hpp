@@ -51,7 +51,7 @@ namespace DLLDiggity
       BindingMask = RTLD_BINDING_MASK,
 
       /* Use deep binding.  */
-      DeepBing = RTLD_DEEPBIND,
+      DeepBind = RTLD_DEEPBIND,
     };
   } // namespace types
 
