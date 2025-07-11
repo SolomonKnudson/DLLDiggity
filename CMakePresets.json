@@ -13,15 +13,6 @@
       "displayName" : "Ninja Multi-Config build",
       "inherits" : "base",
       "generator" : "Ninja Multi-Config"
-    },
-
-    {
-      "name" : "shared-debug",
-      "displayName" : "Curses++ shared",
-      "inherits" : "ninja",
-      "cacheVariables" : {
-        "DLL_DIGGITY_SHARED" : "ON"
-      }
     }
   ],
 
@@ -48,14 +39,6 @@
 
       "configurePreset" : "ninja",
       "configuration" : "RelWithDebInfo"
-    },
-
-    {
-      "name" : "shared-debug",
-      "displayName" : "Shared debug build",
-
-      "configurePreset" : "shared-debug",
-      "configuration" : "Debug"
     }
   ],
 
@@ -107,23 +90,6 @@
         {
           "type" : "build",
           "name" : "RelWithDebInfo"
-        }
-      ]
-    },
-
-    {
-      "name" : "shared-debug",
-      "displayName" : "shared-debug workflow",
-
-      "steps" : [
-        {
-          "type" : "configure",
-          "name" : "shared-debug"
-        },
-
-        {
-          "type" : "build",
-          "name" : "shared-debug"
         }
       ]
     }

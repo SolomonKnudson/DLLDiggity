@@ -16,15 +16,4 @@ set_target_properties(DLLDiggity PROPERTIES
   CXX_EXTENTIONS OFF
 )
 
-option(DLL_DIGGITY_SHARED 
-  "Enable shared DLLDiggity library (Dynamic linking)" 
-  OFF
-)
-
-set(DLL_DIGGITY_BUILD_TYPE STATIC)
-if(DLL_DIGGITY_SHARED)
-  set(DLL_DIGGITY_BUILD_TYPE SHARED)
-endif()
-
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/app)
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/dll_test)
