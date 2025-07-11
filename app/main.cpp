@@ -4,11 +4,18 @@
 int
 main()
 {
-  std::string libCurses{"./libCurses++.so"};
+  std::string lib{"./libCurses++.so"};
   std::string libError{"Test"};
 
-  DLLDiggity::load_module(libCurses, DLLDiggity::types::Now);
-  std::cout << DLLDiggity::error() << '\n';
+  if (DLLDiggity::load_module(lib, DLLDiggity::types::Now))
+  {
+    std::cout << lib << " is now loaded!\n";
+  }
+  else
+  {
+    std::cerr << DLLDiggity::error() << '\n';
+    return 1;
+  }
 
   return 0;
 }
