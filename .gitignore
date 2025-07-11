@@ -4,6 +4,7 @@
 
 *~
 Ninja Multi-Config
+*.so
 *.autosave
 *.a
 *.core
